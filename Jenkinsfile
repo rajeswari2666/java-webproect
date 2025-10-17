@@ -22,8 +22,8 @@ pipeline {
             steps {
                 withAWS(credentials: 'aws-credentials', region: 'us-east-1') {
                     sh "aws s3 cp boxfuse-sample-java-war-hello/target/*.war s3://elasticbeanstalk-us-east-1-695090997008/"
-                    sh "aws elasticbeanstalk create-application-version --application-name mywebapp --version-label v${VERSION_NUMBER} --source-bundle S3Bucket=\"elasticbeanstalk-us-east-1-695090997008\",S3Key=\"hello-1.0.war\""
-                    sh "aws elasticbeanstalk update-environment --application-name mywebapp --environment-name Mywebapp-env --version-label v${VERSION_NUMBER}"
+                    sh "aws elasticbeanstalk create-application-version --application-name Webapplication --version-label v${VERSION_NUMBER} --source-bundle S3Bucket=\"elasticbeanstalk-us-east-1-695090997008\",S3Key=\"hello-1.0.war\""
+                    sh "aws elasticbeanstalk update-environment --application-name Webapplication --environment-name Webapplication-env --version-label v${VERSION_NUMBER}"
                 }
             }
         }
