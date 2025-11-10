@@ -4,7 +4,7 @@ pipeline {
         maven 'Maven 3.8.9'
     }
     environment {
-        VERSION_NUMBER = 0.4
+        VERSION_NUMBER = 0.5
     }
     stages {
         stage('Build') {
